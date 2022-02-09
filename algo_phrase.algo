@@ -1,0 +1,39 @@
+ALGORITHM algorithm_sentence
+VAR
+    sentence : STRING;
+    long, nb_Mots, nb_Voyelles, i, j, k: INTEGER;
+BEGIN
+
+    Read(sentence)
+
+        //La longueur de la phrase
+    long:=length(sentence)-1;
+    
+    nb_Mots:=0;
+    nb_Voyelles:=0;  
+    
+    FOR i FROM 0 TO long STEP step 1 DO
+    IF (sentence[long]==".") THEN
+         //Pour calculer le nombre de mots
+            FOR j FROM 0 TO long STEP step 1 DO
+                IF (sentence[i]=" ") THEN
+                    nb_Mots := nb_Mots+1;
+                END_IF
+            END_FOR
+
+            //Le nombre de voyelles dans la phrase.
+            FOR k FROM 0 TO long STEP step 1 DO
+                IF (sentence[i]=="a" or sentence[i]=="o" or sentence[i]=="i" or sentence[i]=="e" or sentence[i]=="u" or sentence[i]=="y" ) THEN
+                    nb_Voyelles := nb_Voyelles+1;
+                END_IF
+            END_FOR
+        ELSE
+        Read("Ce n'est pas une phrase")
+    END_IF   
+    END_FOR
+
+    Read("La longueur de la phrase est "+long);
+    Read("Le nombre de mots de la phrase est "+nb_Mots);
+    Read("Le nombre de voyelle de la phrase est "+nb_Voyelles);
+
+END
