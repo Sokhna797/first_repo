@@ -1,0 +1,31 @@
+ALGORITHM hash_somme
+VAR
+    htab1: HASH_TABLE<INTEGER,INTEGER>
+    htab2: HASH_TABLE<INTEGER,INTEGER>
+    i: INTEGER;
+BEGIN
+    htab1 : HASH_TABLE<INTEGER,INTEGER>
+    htab1.insert(0,3)
+    htab1.insert(1,1)
+    htab1.insert(2,7)
+    htab1.insert(3,9)
+    Write(htab1);
+
+    htab2 : HASH_TABLE<INTEGER,INTEGER>
+    htab2.insert(0,2)
+    htab2.insert(1,4)
+    htab2.insert(2,1)
+    htab2.insert(3,9)
+    htab2.insert(4,3)
+    Write(htab2);
+
+    FOR i FROM 0 TO htab1.length-1 STEP 1  DO
+        FOR j FROM 0 TO htab2.length. STEP step  DO
+            WHILE (htab1.get(i)<>htab2.get(j)) DO
+            som:=som+htab1.get(i)+tab2[j]htab1.get(j)
+            j:=j+1;
+        END_WHILE
+            i:=i+1;
+        END_FOR
+    END_FOR
+END

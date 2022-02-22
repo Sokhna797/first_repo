@@ -1,0 +1,28 @@
+ALGORITHM Somme_tableaux
+VAR
+    tab1: ARRAY_OF INTEGER[4];
+    tab2: ARRAY_OF INTEGER[5];
+    i,j,som:INTEGER
+BEGIN
+    som:=0;
+    tab1 :={3,1,7,9};
+    tab2 :={2,4,1,9,3};
+    
+FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+    FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+        //on cherche le premier element de tab1 n'existe pas dans tab2
+        /*IF (tab1[i]<>tab2[j]) THEN
+            som:=som+tab1[i]+tab2[j]
+        END_IF*/
+        IF (tab1[i]< tab2[j] && tab[j]<tab[i]) THEN
+            WHILE (tab1[i]<>tab2[j]) DO
+                som:=som+tab1[i]+tab2[j]
+                j:=j+1;
+            END_WHILE
+            i:=i+1;
+        END_IF
+        
+    END_FOR
+END_FOR
+    Write(som);
+END
